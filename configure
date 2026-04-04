@@ -344,6 +344,7 @@ External library support:
                            on OSX if openssl and gnutls are not used [autodetect]
   --enable-vapoursynth     enable VapourSynth demuxer [no]
   --enable-whisper         enable whisper filter [no]
+  --enable-parakeet        enable parakeet filter [no]
   --disable-xlib           disable xlib [autodetect]
   --disable-zlib           disable zlib [autodetect]
 
@@ -2165,6 +2166,7 @@ EXTERNAL_LIBRARY_LIST="
     vapoursynth
     vulkan_static
     whisper
+    parakeet
 "
 
 HWACCEL_AUTODETECT_LIBRARY_LIST="
@@ -4336,6 +4338,7 @@ xstack_qsv_filter_select="qsvvpp"
 pad_vaapi_filter_deps="vaapi_1"
 drawbox_vaapi_filter_deps="vaapi_1"
 whisper_filter_deps="whisper"
+parakeet_filter_deps="parakeet"
 
 # examples
 avio_http_serve_files_deps="avformat avutil fork"
@@ -7491,6 +7494,8 @@ enabled libvorbis         && require_pkg_config libvorbis vorbis vorbis/codec.h 
                              require_pkg_config libvorbisenc vorbisenc vorbis/vorbisenc.h vorbis_encode_init
 
 enabled whisper           && require_pkg_config whisper "whisper >= 1.7.5" whisper.h whisper_init_from_file_with_params
+
+enabled parakeet          && require_pkg_config parakeet "parakeet >= 1.9.0" parakeet.h parakeet_init_from_file_with_params
 
 enabled libvpx            && {
     enabled libvpx_vp8_decoder && {

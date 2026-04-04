@@ -163,6 +163,7 @@ extern const FFFilter ff_af_virtualbass;
 extern const FFFilter ff_af_volume;
 extern const FFFilter ff_af_volumedetect;
 extern const FFFilter ff_af_whisper;
+extern const FFFilter ff_af_parakeet;
 
 extern const FFFilter ff_asrc_aevalsrc;
 extern const FFFilter ff_asrc_afdelaysrc;
